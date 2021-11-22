@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package2"
   DTS:PackageType="5"
-  DTS:VersionBuild="70"
-  DTS:VersionGUID="{2747A23B-9F30-454C-BCA1-30E7CB995882}">
+  DTS:VersionBuild="73"
+  DTS:VersionGUID="{D15282BF-E0BB-4C30-B979-57EEF64E90D4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -627,6 +627,33 @@
                   refId="Package\Stage_NDS_KhachHang_Jade\Them cot CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage_NDS_KhachHang_Jade\Them cot CreatedDate, UpdatedDate.Inputs[Derived Column Input].Columns[GioiTinh]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="GioiTinh"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage_NDS_KhachHang_Jade\KhachHang_Jade_Stage.Outputs[OLE DB Source Output].Columns[GioiTinh]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([TRIM](#{Package\Stage_NDS_KhachHang_Jade\KhachHang_Jade_Stage.Outputs[OLE DB Source Output].Columns[GioiTinh]}) == "N") ? "M" : [TRIM](#{Package\Stage_NDS_KhachHang_Jade\KhachHang_Jade_Stage.Outputs[OLE DB Source Output].Columns[GioiTinh]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(TRIM(GioiTinh) == "N") ? "M" : TRIM(GioiTinh)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -722,6 +749,33 @@
                   refId="Package\Stage_NDS_KhachHang_Jade\Them cot UpdatedDate.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Stage_NDS_KhachHang_Jade\Them cot UpdatedDate.Inputs[Derived Column Input].Columns[GioiTinh]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="GioiTinh"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Stage_NDS_KhachHang_Jade\KhachHang_Jade_Stage.Outputs[OLE DB Source Output].Columns[GioiTinh]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">([TRIM](#{Package\Stage_NDS_KhachHang_Jade\KhachHang_Jade_Stage.Outputs[OLE DB Source Output].Columns[GioiTinh]}) == "N") ? "M" : [TRIM](#{Package\Stage_NDS_KhachHang_Jade\KhachHang_Jade_Stage.Outputs[OLE DB Source Output].Columns[GioiTinh]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(TRIM(GioiTinh) == "N") ? "M" : TRIM(GioiTinh)</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -1548,33 +1602,6 @@ where [refTable].[MaKH] = ?</property>
                   refId="Package\Stage_NDS_KhachHang_Webtower9\Them cot CreatedDate, UpdatedDate.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Stage_NDS_KhachHang_Webtower9\Them cot CreatedDate, UpdatedDate.Inputs[Derived Column Input].Columns[MaNuocNK]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="MaNuocNK"
-                      errorOrTruncationOperation="Computation"
-                      errorRowDisposition="IgnoreFailure"
-                      lineageId="Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa.Outputs[Lookup Match Output].Columns[MaNuocNK]"
-                      truncationRowDisposition="FailComponent"
-                      usageType="readWrite">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Expression"
-                          name="Expression">(DT_NUMERIC,10,0)[TRIM](#{Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa.Outputs[Lookup Match Output].Columns[MaNuocNK]})</property>
-                        <property
-                          containsID="true"
-                          dataType="System.String"
-                          description="Derived Column Friendly Expression"
-                          expressionType="Notify"
-                          name="FriendlyExpression">(DT_NUMERIC,10,0)TRIM(MaNuocNK)</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
@@ -1860,14 +1887,6 @@ where [refTable].[MaKH] = ?</property>
                       externalMetadataColumnId="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu.Inputs[OLE DB Destination Input].ExternalColumns[SoThich]"
                       lineageId="Package\Stage_NDS_KhachHang_Webtower9\KhachHang_Webtower9_Stage.Outputs[OLE DB Source Output].Columns[SoThich]" />
                     <inputColumn
-                      refId="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu.Inputs[OLE DB Destination Input].Columns[MaNuocNK]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="MaNuocNK"
-                      externalMetadataColumnId="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu.Inputs[OLE DB Destination Input].ExternalColumns[MaNuoc]"
-                      lineageId="Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa.Outputs[Lookup Match Output].Columns[MaNuocNK]" />
-                    <inputColumn
                       refId="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu.Inputs[OLE DB Destination Input].Columns[GioiThich]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1875,6 +1894,12 @@ where [refTable].[MaKH] = ?</property>
                       cachedName="GioiThich"
                       externalMetadataColumnId="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu.Inputs[OLE DB Destination Input].ExternalColumns[GioiTinh]"
                       lineageId="Package\Stage_NDS_KhachHang_Webtower9\KhachHang_Webtower9_Stage.Outputs[OLE DB Source Output].Columns[GioiThich]" />
+                    <inputColumn
+                      refId="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu.Inputs[OLE DB Destination Input].Columns[Ma]"
+                      cachedDataType="i4"
+                      cachedName="Ma"
+                      externalMetadataColumnId="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu.Inputs[OLE DB Destination Input].ExternalColumns[MaNuoc]"
+                      lineageId="Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa.Outputs[Lookup Match Output].Columns[Ma]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2128,13 +2153,13 @@ where [refTable].[MaKH] = ?</property>
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select MaNuoc, TenNuoc from Nuoc where NguonDuLieu=3</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select Ma, TenNuoc from Nuoc where NguonDuLieu=3</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select MaNuoc, TenNuoc from Nuoc where NguonDuLieu=3) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select Ma, TenNuoc from Nuoc where NguonDuLieu=3) [refTable]
 where [refTable].[TenNuoc] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -2166,7 +2191,7 @@ where [refTable].[TenNuoc] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="MaNuoc" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="TenNuoc" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Ma" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="TenNuoc" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -2226,19 +2251,17 @@ where [refTable].[TenNuoc] = ?</property>
                   synchronousInputId="Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa.Outputs[Lookup Match Output].Columns[MaNuocNK]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa.Outputs[Lookup Match Output].Columns[Ma]"
+                      dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      length="50"
-                      lineageId="Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa.Outputs[Lookup Match Output].Columns[MaNuocNK]"
-                      name="MaNuocNK"
+                      lineageId="Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa.Outputs[Lookup Match Output].Columns[Ma]"
+                      name="Ma"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">MaNuoc</property>
+                          name="CopyFromReferenceColumn">Ma</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -2550,7 +2573,7 @@ where [refTable].[TenNuoc] = ?</property>
         <NodeLayout
           Size="249.6,41.6"
           Id="Package\Stage_NDS_KhachHang_Webtower9"
-          TopLeft="222.857146652377,143.764707898599" />
+          TopLeft="223.571432378827,143.000002005521" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -2562,23 +2585,19 @@ where [refTable].[TenNuoc] = ?</property>
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\Stage_NDS_KhachHang_Jade\Them cot UpdatedDate"
-          TopLeft="84.3142838531617,406.200002734801" />
+          TopLeft="92.3142838531616,505.200002734801" />
         <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\Stage_NDS_KhachHang_Jade\Update du lieu"
-          TopLeft="87.9714264183637,504.435296659403" />
+          Size="377.6,41.6"
+          Id="Package\Stage_NDS_KhachHang_Jade\Tim dong du lieu tuong ung tu Stage co ton tai trong NDS chua"
+          TopLeft="90.1428575199487,393.752943986345" />
         <NodeLayout
           Size="168.8,41.6"
           Id="Package\Stage_NDS_KhachHang_Jade\Them ColumnID"
           TopLeft="67.85714299095,149.470589490085" />
         <NodeLayout
-          Size="377.6,41.6"
-          Id="Package\Stage_NDS_KhachHang_Jade\Tim dong du lieu tuong ung tu Stage co ton tai trong NDS chua"
-          TopLeft="82.1428575199487,294.752943986345" />
-        <NodeLayout
           Size="170.4,41.6"
           Id="Package\Stage_NDS_KhachHang_Jade\OLE DB Destination"
-          TopLeft="402.85714971776,494.494119320114" />
+          TopLeft="410.85714971776,593.494119320114" />
         <NodeLayout
           Size="195.2,41.6"
           Id="Package\Stage_NDS_KhachHang_Jade\KhachHang_Jade_Stage"
@@ -2586,7 +2605,11 @@ where [refTable].[TenNuoc] = ?</property>
         <NodeLayout
           Size="252.8,41.6"
           Id="Package\Stage_NDS_KhachHang_Jade\Them cot CreatedDate, UpdatedDate"
-          TopLeft="336.457145289987,404.635295383163" />
+          TopLeft="344.457145289987,503.635295383163" />
+        <NodeLayout
+          Size="147.2,41.6"
+          Id="Package\Stage_NDS_KhachHang_Jade\Update du lieu"
+          TopLeft="95.9714264183636,603.435296659403" />
         <EdgeLayout
           Id="Package\Stage_NDS_KhachHang_Jade.Paths[OLE DB Source Output]"
           TopLeft="154.928571495475,101.6">
@@ -2606,50 +2629,48 @@ where [refTable].[TenNuoc] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage_NDS_KhachHang_Jade.Paths[Lookup Match Output]"
-          TopLeft="209.342857519949,336.352943986345">
+          TopLeft="217.342857519949,435.352943986345">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-31.428573666787,69.847058748456"
+              EndConnector="-31.4285736667871,69.847058748456"
               Start="0,0"
-              End="-31.428573666787,62.347058748456">
+              End="-31.4285736667871,62.347058748456">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.115651496214" />
+                    End="0,24.1156514962139" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.115651496214"
-                    Point2="0,28.115651496214"
-                    Point3="-4,28.115651496214" />
+                    Point1="0,24.1156514962139"
+                    Point2="0,28.1156514962139"
+                    Point3="-4,28.1156514962139" />
                   <mssgle:LineSegment
-                    End="-27.428573666787,28.115651496214" />
+                    End="-27.4285736667871,28.1156514962139" />
                   <mssgle:CubicBezierSegment
-                    Point1="-27.428573666787,28.115651496214"
-                    Point2="-31.428573666787,28.115651496214"
-                    Point3="-31.428573666787,32.115651496214" />
+                    Point1="-27.4285736667871,28.1156514962139"
+                    Point2="-31.4285736667871,28.1156514962139"
+                    Point3="-31.4285736667871,32.1156514962139" />
                   <mssgle:LineSegment
-                    End="-31.428573666787,62.347058748456" />
+                    End="-31.4285736667871,62.347058748456" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-63.9056735521435,33.115651496214,96.3827734375,11.609375"
+              BoundingBox="-63.9056735521435,33.1156514962139,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage_NDS_KhachHang_Jade.Paths[Lookup Error Output]"
-          TopLeft="332.542857519949,336.352943986345">
+          TopLeft="340.542857519949,435.352943986345">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2689,39 +2710,37 @@ where [refTable].[TenNuoc] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="118.685714528999,103.68235449626"
+              EndConnector="126.685714528999,202.68235449626"
               Start="0,0"
-              End="118.685714528999,96.1823544962602">
+              End="126.685714528999,195.18235449626">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.8411772481301" />
+                    End="0,97.34117724813" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,47.8411772481301"
-                    Point2="0,51.8411772481301"
-                    Point3="4,51.8411772481301" />
+                    Point1="0,97.34117724813"
+                    Point2="0,101.34117724813"
+                    Point3="4,101.34117724813" />
                   <mssgle:LineSegment
-                    End="114.685714528999,51.8411772481301" />
+                    End="122.685714528999,101.34117724813" />
                   <mssgle:CubicBezierSegment
-                    Point1="114.685714528999,51.8411772481301"
-                    Point2="118.685714528999,51.8411772481301"
-                    Point3="118.685714528999,55.8411772481301" />
+                    Point1="122.685714528999,101.34117724813"
+                    Point2="126.685714528999,101.34117724813"
+                    Point3="126.685714528999,105.34117724813" />
                   <mssgle:LineSegment
-                    End="118.685714528999,96.1823544962602" />
+                    End="126.685714528999,195.18235449626" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage_NDS_KhachHang_Jade.Paths[Derived Column Output1]"
-          TopLeft="462.857145289987,446.235295383163">
+          TopLeft="470.857145289987,545.235295383163">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2732,17 +2751,17 @@ where [refTable].[TenNuoc] = ?</property>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.1294119684754" />
+                    End="0,20.1294119684753" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.1294119684754"
-                    Point2="0,24.1294119684754"
-                    Point3="4,24.1294119684754" />
+                    Point1="0,20.1294119684753"
+                    Point2="0,24.1294119684753"
+                    Point3="4,24.1294119684753" />
                   <mssgle:LineSegment
-                    End="21.2000044277726,24.1294119684754" />
+                    End="21.2000044277726,24.1294119684753" />
                   <mssgle:CubicBezierSegment
-                    Point1="21.2000044277726,24.1294119684754"
-                    Point2="25.2000044277726,24.1294119684754"
-                    Point3="25.2000044277726,28.1294119684754" />
+                    Point1="21.2000044277726,24.1294119684753"
+                    Point2="25.2000044277726,24.1294119684753"
+                    Point3="25.2000044277726,28.1294119684753" />
                   <mssgle:LineSegment
                     End="25.2000044277726,40.7588239369506" />
                 </mssgle:SegmentCollection>
@@ -2750,45 +2769,41 @@ where [refTable].[TenNuoc] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage_NDS_KhachHang_Jade.Paths[Derived Column Output]"
-          TopLeft="177.914283853162,447.800002734801">
+          TopLeft="185.914283853162,546.800002734801">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-16.3428574347979,56.635293924602"
+              EndConnector="-16.342857434798,56.635293924602"
               Start="0,0"
-              End="-16.3428574347979,49.135293924602">
+              End="-16.342857434798,49.135293924602">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.3176469623011" />
+                    End="0,24.317646962301" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.3176469623011"
-                    Point2="0,28.3176469623011"
-                    Point3="-4,28.3176469623011" />
+                    Point1="0,24.317646962301"
+                    Point2="0,28.317646962301"
+                    Point3="-4,28.317646962301" />
                   <mssgle:LineSegment
-                    End="-12.3428574347979,28.3176469623011" />
+                    End="-12.342857434798,28.317646962301" />
                   <mssgle:CubicBezierSegment
-                    Point1="-12.3428574347979,28.3176469623011"
-                    Point2="-16.3428574347979,28.3176469623011"
-                    Point3="-16.3428574347979,32.3176469623011" />
+                    Point1="-12.342857434798,28.317646962301"
+                    Point2="-16.342857434798,28.317646962301"
+                    Point3="-16.342857434798,32.317646962301" />
                   <mssgle:LineSegment
-                    End="-16.3428574347979,49.135293924602" />
+                    End="-16.342857434798,49.135293924602" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -2849,13 +2864,17 @@ where [refTable].[TenNuoc] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="252.8,41.6"
+          Id="Package\Stage_NDS_KhachHang_Webtower9\Them cot CreatedDate, UpdatedDate"
+          TopLeft="336.457145289987,479.235295383163" />
+        <NodeLayout
           Size="305.6,41.6"
           Id="Package\Stage_NDS_KhachHang_Webtower9\Tim MaNuoc cua KhachHang co trong NDS chưa"
           TopLeft="86,263" />
         <NodeLayout
-          Size="252.8,41.6"
-          Id="Package\Stage_NDS_KhachHang_Webtower9\Them cot CreatedDate, UpdatedDate"
-          TopLeft="336.457145289987,479.235295383163" />
+          Size="147.2,41.6"
+          Id="Package\Stage_NDS_KhachHang_Webtower9\Update du lieu"
+          TopLeft="83.6857120596642,579.035296659403" />
         <NodeLayout
           Size="187.2,41.6"
           Id="Package\Stage_NDS_KhachHang_Webtower9\Them cot UpdatedDate"
@@ -2865,21 +2884,53 @@ where [refTable].[TenNuoc] = ?</property>
           Id="Package\Stage_NDS_KhachHang_Webtower9\Tim dong du lieu tuong ung tu Stage co ton tai trong NDS chua"
           TopLeft="82.1428575199487,369.352943986345" />
         <NodeLayout
-          Size="147.2,41.6"
-          Id="Package\Stage_NDS_KhachHang_Webtower9\Update du lieu"
-          TopLeft="83.6857120596642,579.035296659403" />
-        <NodeLayout
           Size="168.8,41.6"
           Id="Package\Stage_NDS_KhachHang_Webtower9\Them ColumnID"
           TopLeft="67.85714299095,149.470589490085" />
         <NodeLayout
-          Size="140,41.6"
-          Id="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu"
-          TopLeft="405.71429262356,583.764707716279" />
-        <NodeLayout
           Size="224,41.6"
           Id="Package\Stage_NDS_KhachHang_Webtower9\KhachHang_Webtower9_Stage"
           TopLeft="60,60" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu"
+          TopLeft="405.71429262356,583.764707716279" />
+        <EdgeLayout
+          Id="Package\Stage_NDS_KhachHang_Webtower9.Paths[Derived Column Output]"
+          TopLeft="177.914283853162,522.400002734801">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-20.6285717934975,56.635293924602"
+              Start="0,0"
+              End="-20.6285717934975,49.135293924602">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.317646962301" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.317646962301"
+                    Point2="0,28.317646962301"
+                    Point3="-4,28.317646962301" />
+                  <mssgle:LineSegment
+                    End="-16.6285717934975,28.317646962301" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-16.6285717934975,28.317646962301"
+                    Point2="-20.6285717934975,28.317646962301"
+                    Point3="-20.6285717934975,32.317646962301" />
+                  <mssgle:LineSegment
+                    End="-20.6285717934975,49.135293924602" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Stage_NDS_KhachHang_Webtower9.Paths[OLE DB Source Output]"
           TopLeft="172,101.6">
@@ -2911,7 +2962,9 @@ where [refTable].[TenNuoc] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3053,7 +3106,9 @@ where [refTable].[TenNuoc] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3087,41 +3142,9 @@ where [refTable].[TenNuoc] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Stage_NDS_KhachHang_Webtower9.Paths[Derived Column Output]"
-          TopLeft="177.914283853162,522.400002734801">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-20.6285717934975,56.635293924602"
-              Start="0,0"
-              End="-20.6285717934975,49.135293924602">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.317646962301" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.317646962301"
-                    Point2="0,28.317646962301"
-                    Point3="-4,28.317646962301" />
-                  <mssgle:LineSegment
-                    End="-16.6285717934975,28.317646962301" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-16.6285717934975,28.317646962301"
-                    Point2="-20.6285717934975,28.317646962301"
-                    Point3="-20.6285717934975,32.317646962301" />
-                  <mssgle:LineSegment
-                    End="-20.6285717934975,49.135293924602" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -3174,7 +3197,7 @@ where [refTable].[TenNuoc] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu">
+    design-time-name="Package\Stage_NDS_KhachHang_Webtower9\KhachHang_Webtower9_Stage">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3187,7 +3210,7 @@ where [refTable].[TenNuoc] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Stage_NDS_KhachHang_Webtower9\KhachHang_Webtower9_Stage">
+    design-time-name="Package\Stage_NDS_KhachHang_Webtower9\Them du lieu">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
