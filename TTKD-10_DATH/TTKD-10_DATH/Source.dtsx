@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{9FA40856-E7D3-41E7-B8E8-BF1E2EF78E13}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{246B47A2-046C-47FD-AC89-DC321C392358}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1017,6 +1017,18 @@
           DTS:ConnectionString="Data Source=LAPTOP-755C2GPC\MSSQL2019;Initial Catalog=UK_Accident;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[LocalHost.UK_Accident]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E08BA038-1023-469C-847F-60D141794EB3}"
+      DTS:ObjectName="LocalHost.UK_Accident">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.;Initial Catalog=UK_Accident;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
@@ -2011,7 +2023,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Accident]</property>
+                  name="OpenRowset">[Accidents]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -2054,8 +2066,8 @@
               <connections>
                 <connection
                   refId="Package\Load CSV Data --&gt; Source\Accidents DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[LAPTOP-755C2GPC\MSSQL2019.UK_Accident]"
-                  connectionManagerRefId="Package.ConnectionManagers[LAPTOP-755C2GPC\MSSQL2019.UK_Accident]"
+                  connectionManagerID="Package.ConnectionManagers[LocalHost.UK_Accident]"
+                  connectionManagerRefId="Package.ConnectionManagers[LocalHost.UK_Accident]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4483,65 +4495,9 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="123.2,41.6"
-          Id="Package\Load CSV Data --&gt; Source\Accidents"
-          TopLeft="73.0952393400424,29.3137259013101" />
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Load CSV Data --&gt; Source\Accidents DB"
-          TopLeft="64.8809534858684,139.558825486672" />
-        <EdgeLayout
-          Id="Package\Load CSV Data --&gt; Source.Paths[Flat File Source Output]"
-          TopLeft="134.788096412955,70.9137259013101">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,68.6450995853615"
-              Start="0,0"
-              End="0,61.1450995853615">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,61.1450995853615" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="128,41.6"
           Id="Package\Load CSV Data --&gt; Source\Casualities"
           TopLeft="289.285719212221,29.31372590131" />
-        <NodeLayout
-          Size="144.8,41.6"
-          Id="Package\Load CSV Data --&gt; Source\Casualities DB"
-          TopLeft="286.904766790721,137.647060753977" />
-        <EdgeLayout
-          Id="Package\Load CSV Data --&gt; Source.Paths[Flat File Source Output1]"
-          TopLeft="356.295243001471,70.91372590131">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,66.7333348526674"
-              Start="0,0"
-              End="0,59.2333348526674">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.2333348526674" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="112,41.6"
           Id="Package\Load CSV Data --&gt; Source\Vehicle"
@@ -4550,6 +4506,18 @@
           Size="128.8,41.6"
           Id="Package\Load CSV Data --&gt; Source\Vehicle DB"
           TopLeft="506.547627674074,133.823531288589" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Load CSV Data --&gt; Source\Accidents DB"
+          TopLeft="64.8809534858684,139.558825486672" />
+        <NodeLayout
+          Size="123.2,41.6"
+          Id="Package\Load CSV Data --&gt; Source\Accidents"
+          TopLeft="73.0952393400424,29.3137259013101" />
+        <NodeLayout
+          Size="144.8,41.6"
+          Id="Package\Load CSV Data --&gt; Source\Casualities DB"
+          TopLeft="286.904766790721,137.647060753977" />
         <EdgeLayout
           Id="Package\Load CSV Data --&gt; Source.Paths[Flat File Source Output2]"
           TopLeft="570.914294411699,73.4627455449022">
@@ -4572,9 +4540,66 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CSV Data --&gt; Source.Paths[Flat File Source Output1]"
+          TopLeft="356.295243001471,70.91372590131">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.7333348526674"
+              Start="0,0"
+              End="0,59.2333348526674">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.2333348526674" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load CSV Data --&gt; Source.Paths[Flat File Source Output]"
+          TopLeft="134.788096412955,70.9137259013101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.6450995853615"
+              Start="0,0"
+              End="0,61.1450995853615">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.1450995853615" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load CSV Data --&gt; Source\Vehicle DB">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load CSV Data --&gt; Source\Accidents DB">
     <Properties>
@@ -4590,19 +4615,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load CSV Data --&gt; Source\Casualities DB">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load CSV Data --&gt; Source\Vehicle DB">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
